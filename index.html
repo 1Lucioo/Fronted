@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrbQRpass — Control de accesos inteligente</title>
+  <meta
+    name="description"
+    content="OrbQRpass moderniza el control de accesos en eventos con QR únicos, registro de asistentes y validación en tiempo real."
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <div class="bg-gradient bg-a"></div>
+  <div class="bg-gradient bg-b"></div>
+  <div class="bg-grid"></div>
+
+  <header class="topbar" id="topbar">
+    <div class="container topbar-inner">
+      <a href="#inicio" class="brand">
+        <div class="brand-square">
+  <span class="orb-text">ORB</span>
+  <span class="qr-text">QR</span>
+</div>
+
+
+        <div class="brand-text">
+          <strong>ORB<span>QR</span></strong>
+          <small>PASS</small>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="#producto">Producto</a>
+        <a href="#tecnologia">Tecnología</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#planes">Planes</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <a href="#contacto" class="btn btn-ghost">Hablar con ventas</a>
+        <a href="#demo" class="btn btn-primary">Solicitar demo</a>
+      </div>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#producto">Producto</a>
+      <a href="#tecnologia">Tecnología</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#planes">Planes</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="container hero-layout">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            CONTROL DE ACCESOS EN TIEMPO REAL
+          </div>
+
+          <h1>
+            El sistema que convierte el ingreso a tu evento en una experiencia
+            <span>rápida, segura y premium.</span>
+          </h1>
+
+          <p class="hero-text">
+            OrbQRpass digitaliza la gestión de entradas con códigos QR únicos,
+            registro inteligente de asistentes, validación instantánea en puerta
+            y monitoreo operativo en tiempo real para boliches, fiestas privadas,
+            festivales y recitales.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#demo" class="btn btn-primary">Solicitar demo</a>
+            <a href="#producto" class="btn btn-secondary">Explorar producto</a>
+          </div>
+
+          <div class="hero-proof">
+            <div class="proof-card">
+              <strong class="count" data-target="50000">0</strong>
+              <span>QR únicos procesados</span>
+            </div>
+            <div class="proof-card">
+              <strong class="count" data-target="99.9">0</strong>
+              <span>precisión de validación</span>
+            </div>
+            <div class="proof-card">
+              <strong class="count" data-target="80">0</strong>
+              <span>menos fraude manual</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" id="demo">
+          <div class="hero-panel glass-panel">
+            <div class="panel-top">
+              <div class="panel-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="panel-label">OrbQRpass Live Control</div>
+              <div class="panel-status">online</div>
+            </div>
+
+            <div class="live-grid">
+              <div class="live-card live-card-large">
+                <div class="live-card-head">
+                  <span class="badge">EVENTO EN CURSO</span>
+                  <span class="muted">22:19 hs</span>
+                </div>
+                <h3>Neon Club Session</h3>
+                <p>
+                  Acceso operativo con validación en vivo, control por staff y
+                  alertas automáticas por intento duplicado.
+                </p>
+
+                <div class="scan-line-wrap">
+                  <div class="scan-line"></div>
+                  <div class="qr-frame">
+                    <div class="qr-corners"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="live-card">
+                <span class="mini-label">Check-ins validados</span>
+                <strong>1.284</strong>
+                <small>+18% vs. evento anterior</small>
+              </div>
+
+              <div class="live-card">
+                <span class="mini-label">Alertas de fraude</span>
+                <strong>03</strong>
+                <small>bloqueadas automáticamente</small>
+              </div>
+
+              <div class="live-card wide-card">
+                <div class="flow-list">
+                  <div class="flow-item ok">
+                    <span></span>
+                    <p>QR válido · Registro completo</p>
+                  </div>
+                  <div class="flow-item warn">
+                    <span></span>
+                    <p>Pendiente de registro</p>
+                  </div>
+                  <div class="flow-item danger">
+                    <span></span>
+                    <p>QR ya utilizado / duplicado</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            
+        </div>
+      </div>
+    </section>
+
+    <section class="section metrics-strip reveal">
+      <div class="container metrics-strip-inner">
+        <div class="metric-line">
+          <span class="metric-kicker">Productoras</span>
+          <strong>Operación más limpia</strong>
+        </div>
+        <div class="metric-line">
+          <span class="metric-kicker">Boliches</span>
+          <strong>Ingresos más rápidos</strong>
+        </div>
+        <div class="metric-line">
+          <span class="metric-kicker">Festivales</span>
+          <strong>Menos fraude y reventa falsa</strong>
+        </div>
+        <div class="metric-line">
+          <span class="metric-kicker">Venues</span>
+          <strong>Más trazabilidad y datos</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="producto">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-tag">PRODUCTO</span>
+          <h2>Una plataforma pensada para que el acceso deje de ser un problema.</h2>
+          <p>
+            OrbQRpass elimina tickets físicos mal gestionados, controles manuales
+            lentos y validaciones inseguras. Todo se centraliza en una experiencia
+            digital clara, moderna y escalable.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-box feature-xl reveal">
+            <div class="feature-icon">01</div>
+            <h3>QR únicos con identidad verificable</h3>
+            <p>
+              Cada entrada contiene un identificador seguro vinculado a una base
+              centralizada. El código deja de ser solo un ticket y pasa a ser una
+              credencial trazable.
+            </p>
+          </article>
+
+          <article class="feature-box reveal">
+            <div class="feature-icon">02</div>
+            <h3>Registro desde el celular</h3>
+            <p>
+              El asistente escanea el QR, completa sus datos y su acceso queda
+              asociado a una persona real.
+            </p>
+          </article>
+
+          <article class="feature-box reveal">
+            <div class="feature-icon">03</div>
+            <h3>Detección de uso duplicado</h3>
+            <p>
+              El sistema identifica si el QR ya fue utilizado y bloquea el segundo intento.
+            </p>
+          </article>
+
+          <article class="feature-box reveal">
+            <div class="feature-icon">04</div>
+            <h3>Control operativo en vivo</h3>
+            <p>
+              Supervisá ingresos, pendientes y alertas mientras el evento está ocurriendo.
+            </p>
+          </article>
+
+          <article class="feature-box reveal">
+            <div class="feature-icon">05</div>
+            <h3>Más datos del público</h3>
+            <p>
+              Entendé mejor quién asiste, cuándo entra y cómo se comporta la audiencia.
+            </p>
+          </article>
+
+          <article class="feature-box feature-cta reveal">
+            <span class="feature-small">ORBQRPASS</span>
+            <h3>Diseñado para vender confianza antes del evento y control durante el evento.</h3>
+            <a href="#contacto" class="inline-link">Quiero verlo en acción</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tech-section" id="tecnologia">
+      <div class="container tech-layout">
+        <div class="tech-copy reveal">
+          <span class="section-tag">TECNOLOGÍA</span>
+          <h2>El flujo completo del acceso, visualizado como producto.</h2>
+          <p>
+            No es solo un generador de QR. Es una lógica operativa completa:
+            emisión, registro, validación, bloqueo de duplicados y lectura del
+            comportamiento de asistentes.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <span>1</span>
+              <div>
+                <h4>Generás entradas</h4>
+                <p>Creación masiva de QR individuales por evento, lote o tipo de acceso.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span>2</span>
+              <div>
+                <h4>El asistente se registra</h4>
+                <p>El QR abre una pantalla de registro y vincula la entrada con una persona.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span>3</span>
+              <div>
+                <h4>El staff escanea en puerta</h4>
+                <p>La app determina si el acceso es válido, pendiente o ya utilizado.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span>4</span>
+              <div>
+                <h4>El sistema deja trazabilidad</h4>
+                <p>Todo queda registrado para control operativo y análisis posterior.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-preview reveal">
+          <div class="device device-main">
+            <div class="device-top">
+              <span></span><span></span><span></span>
+            </div>
+
+            <div class="device-body">
+              <div class="device-head">
+                <small>Registro del asistente</small>
+                <strong>Orb Sunset Festival</strong>
+              </div>
+
+              <div class="input-mock"></div>
+              <div class="input-mock"></div>
+              <div class="input-mock"></div>
+              <div class="input-mock half"></div>
+              <div class="input-mock half"></div>
+              <div class="btn-mock"></div>
+
+              <div class="status-pill success-pill">Estado: Registrado</div>
+            </div>
+          </div>
+
+          <div class="device device-side">
+            <div class="validator-ui">
+              <small>Staff Validator</small>
+              <div class="scanner-area"></div>
+              <div class="validator-result">
+                <strong>Ingreso válido</strong>
+                <p>Registro completo · Acceso habilitado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="dashboard">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-tag">DASHBOARD</span>
+          <h2>Un panel que se siente como software real, no como una maqueta vacía.</h2>
+        </div>
+
+        <div class="dashboard-shell reveal">
+          <aside class="dashboard-sidebar">
+            <div class="db-brand">
+              <div class="db-square"></div>
+              <div>
+                <strong>OrbQRpass</strong>
+                <small>Organizer Console</small>
+              </div>
+            </div>
+
+            <button class="db-nav active">Resumen</button>
+            <button class="db-nav">Eventos</button>
+            <button class="db-nav">Registros</button>
+            <button class="db-nav">Escaneos</button>
+            <button class="db-nav">Alertas</button>
+          </aside>
+
+          <div class="dashboard-main">
+            <div class="dashboard-top">
+              <div class="db-top-left">
+                <small>Panel en vivo</small>
+                <h3>Neon Club Session · Operación activa</h3>
+              </div>
+              <div class="db-top-right">
+                <span class="live-pill">Live</span>
+                <button class="mini-btn">Exportar</button>
+                <button class="mini-btn accent">Generar QR</button>
+              </div>
+            </div>
+
+            <div class="db-kpis">
+              <div class="db-kpi">
+                <span>Eventos activos</span>
+                <strong>12</strong>
+              </div>
+              <div class="db-kpi">
+                <span>QRs generados</span>
+                <strong>18.650</strong>
+              </div>
+              <div class="db-kpi">
+                <span>Registrados</span>
+                <strong>11.420</strong>
+              </div>
+              <div class="db-kpi">
+                <span>Validados</span>
+                <strong>7.864</strong>
+              </div>
+            </div>
+
+            <div class="dashboard-panels">
+              <div class="db-panel panel-tall">
+                <div class="panel-head">
+                  <h4>Rendimiento por estado</h4>
+                  <span>últimos 60 min</span>
+                </div>
+
+                <div class="bar-chart">
+                  <div class="bar-group">
+                    <div class="bar ok" style="height: 82%"></div>
+                    <small>Válidos</small>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar warn" style="height: 36%"></div>
+                    <small>Pendientes</small>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar danger" style="height: 18%"></div>
+                    <small>Duplicados</small>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar neutral" style="height: 64%"></div>
+                    <small>Registrados</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="db-panel">
+                <div class="panel-head">
+                  <h4>Actividad reciente</h4>
+                  <span>Live feed</span>
+                </div>
+
+                <div class="feed-list">
+                  <div class="feed-item">
+                    <span class="feed-time">22:01</span>
+                    <p><strong>L. Gómez</strong> · ingreso validado</p>
+                  </div>
+                  <div class="feed-item">
+                    <span class="feed-time">22:03</span>
+                    <p><strong>M. Acosta</strong> · pendiente de registro</p>
+                  </div>
+                  <div class="feed-item">
+                    <span class="feed-time">22:04</span>
+                    <p><strong>F. Rivas</strong> · intento duplicado</p>
+                  </div>
+                  <div class="feed-item">
+                    <span class="feed-time">22:06</span>
+                    <p><strong>T. Díaz</strong> · ingreso validado</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="db-panel panel-wide">
+                <div class="panel-head">
+                  <h4>Eventos activos</h4>
+                  <span>Vista general</span>
+                </div>
+
+                <div class="data-table">
+                  <div class="data-row head">
+                    <span>Evento</span>
+                    <span>Fecha</span>
+                    <span>Estado</span>
+                    <span>Registrados</span>
+                  </div>
+                  <div class="data-row">
+                    <span>Neon Club Session</span>
+                    <span>12 Mar</span>
+                    <span class="text-ok">Activo</span>
+                    <span>1.243</span>
+                  </div>
+                  <div class="data-row">
+                    <span>Orb Sunset Festival</span>
+                    <span>20 Mar</span>
+                    <span class="text-ok">Activo</span>
+                    <span>3.120</span>
+                  </div>
+                  <div class="data-row">
+                    <span>Black Private Party</span>
+                    <span>27 Mar</span>
+                    <span class="text-muted">Borrador</span>
+                    <span>94</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dashboard-tabs">
+              <button class="tab-btn active" data-tab="tab1">Generación QR</button>
+              <button class="tab-btn" data-tab="tab2">Registro</button>
+              <button class="tab-btn" data-tab="tab3">Validación</button>
+            </div>
+
+            <div class="tab-content active" id="tab1">
+              <div class="tab-card">
+                <div class="tab-left">
+                  <h4>Generá lotes de entradas en segundos</h4>
+                  <p>
+                    Configurá evento, tipo de acceso, cupo y lote de QR desde una interfaz clara y profesional.
+                  </p>
+                </div>
+                <div class="tab-right mini-form">
+                  <div></div><div></div><div></div><div class="accent-block"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content" id="tab2">
+              <div class="tab-card">
+                <div class="tab-left">
+                  <h4>Asociación de entrada con asistente real</h4>
+                  <p>
+                    Cada QR puede completar un flujo de registro con datos personales, reduciendo anonimato y errores de control.
+                  </p>
+                </div>
+                <div class="tab-right mini-form register">
+                  <div></div><div></div><div></div><div></div><div class="accent-block"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content" id="tab3">
+              <div class="tab-card">
+                <div class="tab-left">
+                  <h4>Validación operativa para staff</h4>
+                  <p>
+                    Una interfaz pensada para velocidad en puerta: estados claros, lectura inmediata y cero confusión.
+                  </p>
+                </div>
+                <div class="tab-right validator-mini">
+                  <div class="validator-box"></div>
+                  <div class="validator-state"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing-section" id="planes">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-tag">PLANES</span>
+          <h2>Presentación premium también para vender el servicio.</h2>
+          <p>
+            Aunque esto sea solo frontend, ya está armado para que la marca se
+            perciba como un producto serio, tecnológico y escalable.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="price-card reveal">
+            <small>STARTER</small>
+            <h3>Eventos medianos</h3>
+            <strong>Control simple</strong>
+            <ul>
+              <li>QR únicos</li>
+              <li>Registro básico</li>
+              <li>Validación visual</li>
+            </ul>
+          </div>
+
+          <div class="price-card featured reveal">
+            <div class="featured-badge">RECOMENDADO</div>
+            <small>PRO</small>
+            <h3>Productoras y venues</h3>
+            <strong>Operación premium</strong>
+            <ul>
+              <li>Dashboard en vivo</li>
+              <li>Alertas de duplicado</li>
+              <li>Analítica del público</li>
+            </ul>
+          </div>
+
+          <div class="price-card reveal">
+            <small>ENTERPRISE</small>
+            <h3>Festivales / multi-evento</h3>
+            <strong>Escala total</strong>
+            <ul>
+              <li>Mayor volumen</li>
+              <li>Flujos avanzados</li>
+              <li>Gestión centralizada</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contacto">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-copy">
+            <span class="section-tag">CONTACTO</span>
+            <h2>Hacé que OrbQRpass se vea como un producto que ya está listo para salir a vender.</h2>
+            <p>
+              Esta versión ya está pensada como frontend de alto impacto visual,
+              ideal para portfolio, demo comercial o base de una futura web real.
+            </p>
+          </div>
+
+          <form class="contact-form" onsubmit="return false;">
+            <div class="input-wrap"><input type="text" placeholder="Nombre" /></div>
+            <div class="input-wrap"><input type="text" placeholder="Marca / Productora" /></div>
+            <div class="input-wrap"><input type="email" placeholder="Email" /></div>
+            <div class="input-wrap"><input type="text" placeholder="Tipo de evento" /></div>
+            <div class="input-wrap full"><textarea placeholder="Contame qué querés controlar con OrbQRpass"></textarea></div>
+            <button class="btn btn-primary full-btn">Solicitar propuesta</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand-square small">
+          <span>ORB</span>
+          <span>QR</span>
+        </div>
+        <div>
+          <strong>OrbQRpass</strong>
+          <p>Plataforma inteligente de control de accesos para eventos.</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#producto">Producto</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
